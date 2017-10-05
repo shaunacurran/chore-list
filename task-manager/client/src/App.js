@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+// css file temp commented out
+// import './App.css';
 
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import AddStudent from './components/AddStudent.js';
@@ -11,8 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Student Roster</h2>
+        
+          <h2>Task Force</h2>
         </div>
         <Router>
           <div>
