@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import AddStudent from './components/AddStudent.js';
 import ViewStudents from './components/ViewStudents.js';
+import HomeTasks from './components/HomeTasks.js';
 
 class App extends Component {
   render() {
@@ -25,6 +26,9 @@ class App extends Component {
         <Route exact path ="/view" component = {ViewStudents}/>
         </div>
         </Router>
+        <div>
+        <AddStudent />
+        </div>
         <p className="App-intro">
           
         </p>
