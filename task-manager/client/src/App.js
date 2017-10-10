@@ -3,6 +3,7 @@ import logo from './logo.svg';
 // css file temp commented out
 // import './App.css';
 
+import GoogleApiWrapper from './components/Map.js';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import AddStudent from './components/AddStudent.js';
 import ViewStudents from './components/ViewStudents.js';
@@ -18,17 +19,18 @@ class App extends Component {
         </div>
         <Router>
           <div>
-        <Link to = "/add">Add New Student</Link> | 
-        <Link to = "/view">View All Students</Link>
+        <Link to = "/map">See Map</Link> | 
+       
         <hr />
         
-        <Route exact path ="/add" component = {AddStudent}/>
-        <Route exact path ="/view" component = {ViewStudents}/>
+     
+         <Route exact path ="/map" component={ GoogleApiWrapper }/>
         </div>
         </Router>
         <div>
         <AddStudent />
         </div>
+         
         <p className="App-intro">
           
         </p>
