@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import AddStudent from './components/AddStudent.js';
 import ViewStudents from './components/ViewStudents.js';
 import HomeTasks from './components/HomeTasks.js';
+import AddTask from './components/AddTask.js';
 
 class App extends Component {
   render() {
@@ -19,12 +20,17 @@ class App extends Component {
         </div>
         <Router>
           <div>
-        <Link to = "/map">See Map</Link> | 
+        <Link to = "/map">See Map</Link> |
+        <Link to = "/addTask">Add A Task</Link> |
+        <Link to = "/toDoList">To-Do List</Link> |
+         
        
         <hr />
         
      
          <Route exact path ="/map" component={ GoogleApiWrapper }/>
+         <Route exact path ="/addTask" component={ AddTask }/>
+         <Route exact path ="/toDoList" component={ HomeTasks }/>
         </div>
         </Router>
         <div>
