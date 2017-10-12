@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import HomeTasks from './HomeTasks'
-import axios from 'axios'
+
 
 export default class AddStudent extends React.Component {
     constructor(props, context) {
@@ -12,16 +11,10 @@ export default class AddStudent extends React.Component {
 
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+        this.createTasks = this.createTasks.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
-//     postData() {axios.get('/api/students/all')
-//     .then(response => {
-  
-//     })
-//     .catch(error => {
-//       console.log('Error fetching and parsing data', error);
-//     });
-// }
 
     addItem(e) {
         var itemArray = this.state.items;
@@ -54,18 +47,31 @@ export default class AddStudent extends React.Component {
         });
       }
 
+      createTasks(item) {
+        return <li key={item.key}>{item.text}
+            <button onClick={(e) => this.delete(item.key, e)}>Done</button>
+            </li>
+    }
+
+    delete(key) {
+        this.deleteItem(key);
+      }
+   
     render() {
+        var todoEntries = this.state.items;
+        var listItems = todoEntries.map(this.createTasks);
         return (
             <div className="todoListMain">
                 <div className="header">
-                    <form onSubmit={this.addItem}>
+                    <form>
                         <input ref={(a) => this._inputElement = a}>
                         </input>
-                        <button type="submit">add</button>
+                        <button  onClick={this.addItem}>Add</button>
                     </form>
                 </div>
-                <HomeTasks entries={this.state.items}
-                            delete={this.deleteItem}/>
+                <ul>
+                {listItems}
+                </ul>
             </div>
         );
     }
