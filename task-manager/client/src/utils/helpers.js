@@ -9,17 +9,25 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 
 const helpers = {
-geocoder: function(address) {
-    return googleMapsClient.geocode({
+geocoder: function(address, cb) {
+let res = [];
+googleMapsClient.geocode({
   address: address
 }, function(err, response) {
-  if (!err) {
-    console.log(response.json.results[0].geometry.location);
-//  response.json.results[0].geometry.location.lat + ", "+ response.json.results[0].geometry.location.lng;
+  if (response) {
+      
+      res.push(response.json.results[0].geometry.location.lat)
+      res.push(response.json.results[0].geometry.location.lng);
+    // console.log(response.json.results[0].geometry.location);
+    console.log(res)
+ // return res;
 
 
   }
+  cb(res);
 })
+
+
 },
 
 
@@ -57,19 +65,19 @@ distances: function(latlon, destLatandLon){
   }
     })
 },
-    places: function(coord1, coord2){
-        return googleMapsClient.places({
+    places: function(originCoord){
+        //let originCoord = helpers.geocoder(address);
+  googleMapsClient.places({
             query: 'Target',
            
-            location: [
-              coord1  +coord2
-            ],
+            location: originCoord,
             radius: 1609
 
         }, function(err, response) {
   if (!err) {
       
-console.log(response.json.results[0]);
+console.log(response.json.results[0].formatted_address);
+//return console.log(response.json.results[0].formatted_address)
   }
 });
 
@@ -78,9 +86,11 @@ console.log(response.json.results[0]);
 
 // export default helpers;
 
+helpers.geocoder( "4016 N Central Park Ave, Chicago, IL 60618", helpers.places );
 
-helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618");
-helpers.places(helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618"));
+//helpers.places("4016 N Central Park Ave, Chicago, IL 60618");
+// helpers.places([41.9544384, -87.7178357])
+// helpers.places(helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618"));
 // let place1 = helpers.places(helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618"));
 // let place2 = helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618");
 // helpers.distances(place1, place2);
