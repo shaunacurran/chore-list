@@ -19,7 +19,7 @@ googleMapsClient.geocode({
       res.push(response.json.results[0].geometry.location.lat)
       res.push(response.json.results[0].geometry.location.lng);
     // console.log(response.json.results[0].geometry.location);
-    console.log(res)
+    // console.log(res)
  // return res;
 
 
@@ -33,15 +33,11 @@ googleMapsClient.geocode({
 
 distances: function(latlon, destLatandLon){
     return googleMapsClient.distanceMatrix({
-      origins: [
-       latlon
-        ],
-      destinations: [
-        destLatandLon
-      ]
+      origins: latlon,
+      destinations: destLatandLon
     }, function(err, response) {
-  if (!err) {
-    console.log(response.json.rows[0].elements[0].distance.text);
+  if (response) {
+    console.log(response.json.rows[0]);
   }
     })
 },
@@ -49,48 +45,59 @@ distances: function(latlon, destLatandLon){
 
 // TURN BY TURN directions
     directions: function(latlon, destLatandLon){
-      return googleMapsClient.directions({
-      origin: [
-      latlon
-        ],
-      destination: [
-        destLatandLon
-      ]
+        return googleMapsClient.directions({
+         origin: latlon,
+         destination: destLatandLon
     }, function(err, response) {
   if (!err) {
     response.json.routes[0].legs[0].steps.forEach(function(element) {
        console.log(element.html_instructions) 
     } );
+    console.log(response.json.routes[0].legs[0].distance.text);
+    console.log(response.json.routes[0].legs[0].duration.text)
+
 
   }
     })
 },
-    places: function(originCoord){
+places: function(originCoord){
         //let originCoord = helpers.geocoder(address);
-  googleMapsClient.places({
+        let resCoord = []
+        googleMapsClient.places({
             query: 'Target',
            
             location: originCoord,
             radius: 1609
 
         }, function(err, response) {
-  if (!err) {
+        if (response) {
+                resCoord.push(originCoord[0])
+                resCoord.push(originCoord[1])
+                resCoord.push(response.json.results[0].geometry.location.lat)
+                resCoord.push(response.json.results[0].geometry.location.lng);
+                resCoord.push(response.json.results[0].formatted_address);
+               
+    // console.log(response.json.results[0].geometry.location);
+    console.log(resCoord)
+    //resCoord[0], resCoord[1]=original point's coord
+     //resCoord[2], resCoord[3]=place's point's coord
+      //resCoord[4]= address of place
       
-console.log(response.json.results[0].formatted_address);
-//return console.log(response.json.results[0].formatted_address)
-  }
-});
+        
+        return resCoord
+
+    }
+ 
+    });
 
     }
 };
 
 // export default helpers;
 
-helpers.geocoder( "4016 N Central Park Ave, Chicago, IL 60618", helpers.places );
+//Example of working places function being called
+helpers.geocoder( "4016 N Central Park Ave, Chicago, IL 60618", helpers.places);
+//Example of working directions being called
+// helpers.directions([41.9456545, -87.702458 ], [ 41.9544384, -87.7178357 ]);
 
-//helpers.places("4016 N Central Park Ave, Chicago, IL 60618");
-// helpers.places([41.9544384, -87.7178357])
-// helpers.places(helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618"));
-// let place1 = helpers.places(helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618"));
-// let place2 = helpers.geocoder("4016 N Central Park Ave, Chicago, IL 60618");
-// helpers.distances(place1, place2);
+
