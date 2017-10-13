@@ -9,6 +9,7 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 //This should run anytime an actual address location is listed during creation.
 const helpers = {
+  
 geocoder: function(address, cb) {
 let res = [];
 googleMapsClient.geocode({
@@ -102,8 +103,8 @@ places: function(originCoordArray, taskPlace, callback){
     }
 };
 
-export default helpers;
 
+exports.helpers = helpers;
 //Example of working places function being called
 // helpers.geocoder( "4016 N Central Park Ave, Chicago, IL 60618");
 //Example of working directions bAeing called
