@@ -61,6 +61,7 @@ distances: function(latlon, destLatandLon){
     response.json.routes[0].legs[0].steps.forEach(function(element) {
        resCoord.push(element.html_instructions)});
        console.log(resCoord)
+       return resCoord
 
 
   }
@@ -101,11 +102,11 @@ places: function(originCoordArray, taskPlace, callback){
     }
 };
 
-// export default helpers;
+export default helpers;
 
 //Example of working places function being called
 // helpers.geocoder( "4016 N Central Park Ave, Chicago, IL 60618");
 //Example of working directions bAeing called
 // helpers.directions([41.9456545, -87.702458 ], [ 41.9544384, -87.7178357 ]);
-helpers.places([ 41.9544384, -87.7178357 ], "Jewel", helpers.directions);
+// helpers.places([ 41.9544384, -87.7178357 ], "Jewel", helpers.directions);
 
