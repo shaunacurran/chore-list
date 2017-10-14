@@ -7,7 +7,7 @@ import navbar from './navbar.css';
 
 import GoogleApiWrapper from './components/Map.js';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import AddStudent from './components/AddStudent.js';
+import ToDo from './components/ToDo.js';
 import ViewStudents from './components/ViewStudents.js';
 import HomeTasks from './components/HomeTasks.js';
 import AddTask from './components/AddTask.js';
@@ -37,7 +37,7 @@ class App extends Component {
             </div>
               <Route exact path ="/map" component={ GoogleApiWrapper }/>
               <Route exact path ="/addTask" component={ AddTask }/>
-              <Route exact path ="/toDoList" component={ AddStudent }/>
+              <Route exact path ="/toDoList" component={ ToDo }/>
         </nav>
         </Router>
         </div>
