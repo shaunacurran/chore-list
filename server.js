@@ -41,12 +41,12 @@ mongoose.Promise = global.Promise;
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/chorelist",
-  {
-    useMongoClient: true
-  }
-);
+mongoose.connect("mongodb://heroku_nmzm366r:3ea5cp35qq2ou5j9bvu28bpl1e@ds023530.mlab.com:23530/heroku_nmzm366r");
+//   process.env.MONGODB_URI || "mongodb://localhost/chorelist",
+//   {
+//     useMongoClient: true
+//   }
+// );
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
