@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class AddStudent extends React.Component {
+export default class ToDo extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -39,24 +39,24 @@ export default class AddStudent extends React.Component {
 
     deleteItem(key) {
         var filteredItems = this.state.items.filter(function (item) {
-          return (item.key !== key);
+            return (item.key !== key);
         });
-       
-        this.setState({
-          items: filteredItems
-        });
-      }
 
-      createTasks(item) {
+        this.setState({
+            items: filteredItems
+        });
+    }
+
+    createTasks(item) {
         return <li key={item.key}>{item.text}
             <button onClick={(e) => this.delete(item.key, e)}>Done</button>
-            </li>
+        </li>
     }
 
     delete(key) {
         this.deleteItem(key);
-      }
-   
+    }
+
     render() {
         var todoEntries = this.state.items;
         var listItems = todoEntries.map(this.createTasks);
@@ -66,11 +66,11 @@ export default class AddStudent extends React.Component {
                     <form>
                         <input ref={(a) => this._inputElement = a}>
                         </input>
-                        <button  onClick={this.addItem}>Add</button>
+                        <button onClick={this.addItem}>Add</button>
                     </form>
                 </div>
                 <ul>
-                {listItems}
+                    {listItems}
                 </ul>
             </div>
         );
