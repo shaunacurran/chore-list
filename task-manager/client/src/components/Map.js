@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import styles from '../uikit.css';
 
 
 
@@ -8,6 +9,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 class MapContainer extends Component {
 render() {
     return (
+      <div class="uk-container-small">
       <Map google={this.props.google} zoom={14}>
 
         <Marker onClick={this.onMarkerClick}
@@ -19,6 +21,8 @@ render() {
             </div>
         </InfoWindow>*/}
       </Map>
+    </div>
+    
     );
   }
 }
