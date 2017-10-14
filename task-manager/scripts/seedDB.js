@@ -9,6 +9,18 @@ mongoose.connect(
     }
 );
 
+const householdSeed = [
+    {
+        name: "household1",
+        password: "thisIsATest"
+    },
+    {
+        name: "household2",
+        password: "thisIsATest2"
+
+    }
+];
+
 const userSeed = [
     {
         email: "test@gmail.com",
@@ -19,6 +31,18 @@ const userSeed = [
         householdID: "2"
     }
 ];
+
+db.Household
+    .remove({})
+    .then(() => db.Household.collection.insertMany(householdSeed))
+    .then(data => {
+        console.log(data.insertedIds.length + " records inserted");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
 
 db.User
     .remove({})
