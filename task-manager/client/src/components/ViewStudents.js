@@ -18,7 +18,7 @@ export default class ViewStudents extends React.Component {
         );
     }
     componentWillMount() {
-        console.log('you did it');
+        console.log('Oops, you did it again');
         axios('/api/students/all').then(response => {
             this.setState({
                 students: response.data
