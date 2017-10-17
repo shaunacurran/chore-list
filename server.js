@@ -16,30 +16,14 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-// data can be used the same way from mongo or mysql
-// let students = [
-//   {
-//     name: 'Robert'
-//   },
-//   {
-//     name:'Alfred'
-//   },
-//   {
-//     name: 'Morley'
-//   }
-// ];
-
-// app.get('/api/students/all', function (req, res) {
-//   res.json(students);
-// });
 
 mongoose.Promise = global.Promise;
 
 // Send every request to the React app
 // Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 mongoose.connect("mongodb://heroku_nmzm366r:3ea5cp35qq2ou5j9bvu28bpl1e@ds023530.mlab.com:23530/heroku_nmzm366r");
 //   process.env.MONGODB_URI || "mongodb://localhost/chorelist",
