@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+console.log("RUNNING TODO APP");
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
  app.use(express.static("client/build"));
@@ -32,5 +33,5 @@ mongoose.connect("mongodb://heroku_nmzm366r:3ea5cp35qq2ou5j9bvu28bpl1e@ds023530.
 // );
 
 app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+  console.log(`🌎 ==> Server now on port ${PORT}! TESTERPERGPSRSE`);
 });

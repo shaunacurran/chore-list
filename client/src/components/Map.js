@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 const style = {
-  width: '100%',
-  height: '100%'
+  width: '70%',
+  height: '70%'
 }
 class MapContainer extends Component {
   
@@ -28,6 +28,8 @@ class MapContainer extends Component {
 
 render() {
     return (
+    <div>
+      
    <Map
    
           google={this.props.google}
@@ -45,6 +47,7 @@ render() {
  
 
       </Map>
+     </div> 
     );
   }
 }
