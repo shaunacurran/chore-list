@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import Navbar from 'Navbar.js';
 
 
 
@@ -28,6 +29,8 @@ class MapContainer extends Component {
 
 render() {
     return (
+    <div>
+      
    <Map
    
           google={this.props.google}
@@ -45,6 +48,7 @@ render() {
  
 
       </Map>
+     </div> 
     );
   }
 }
