@@ -1,5 +1,5 @@
 module.exports = {
     User: require("./user"),
-    Household: require("./household")
-
+    Household: require("./household"),
+    Task: require("./task")
 };
