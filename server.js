@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+console.log("RUNNING TODO APP");
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
  console.log("THIS IS IN PRODUCTION line 14");
