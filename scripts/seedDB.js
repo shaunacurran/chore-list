@@ -11,12 +11,14 @@ mongoose.connect(
 
 const householdSeed = [
     {
-        name: "household1",
-        password: "thisIsATest"
+        housename: "household1",
+        housepassword: "thisIsATest",
+        email: 'test@gmail.com'
     },
     {
-        name: "household2",
-        password: "thisIsATest2"
+        housename: "household2",
+        housepassword: "thisIsATest2",
+        email: 'test@hotmail.com'
 
     }
 ];
