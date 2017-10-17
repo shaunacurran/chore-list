@@ -1,0 +1,17 @@
+.uk-position-medium.uk-position-center-left.uk-overlay.uk-overlay-default {
+    color: #ffffff;
+    background-color: transparent;
+    font-size: 35px;
+    padding: 30px;
+    height: 300px;
+    width: 300px;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 1px 1px 1px black;
+}
+/* 
+h2 {
+    color: #ffffff;
+    background-color: #3a3a3a;
+    opacity: .5;
+} */

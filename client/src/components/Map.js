@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-// import Navbar from 'Navbar.js';
 
 
 
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 const style = {
-  width: '100%',
-  height: '100%'
+  width: '70%',
+  height: '70%'
 }
 class MapContainer extends Component {
   
