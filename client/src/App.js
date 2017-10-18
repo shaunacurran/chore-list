@@ -12,6 +12,7 @@ import HomeTasks from './components/HomeTasks.js';
 import AddTask from './components/AddTask.js';
 import SignIn from './components/SignIn.js';
 import HouseholdSignUp from './components/HouseholdSignUp.js';
+import Home from './components/Home.js'
 
 class App extends Component {
   render() {
@@ -38,6 +39,7 @@ class App extends Component {
                 </div>
               </nav>
             </div>
+            <Route exact path ="/home" component={ Home }/>
               <Route exact path ="/signIn" component={ SignIn }/>
               <Route exact path ="/householdsignup" component={ HouseholdSignUp }/>
               <Route exact path ="/map" component={ GoogleApiWrapper }/>

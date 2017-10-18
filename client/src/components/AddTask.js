@@ -1,54 +1,76 @@
-import React from 'react'
+import React from 'react';
+import API from "../utils/API";
 
 export default class AddTask extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = {
-            task: "",
-            date: "",
-            location: ""
-        };
+    state = {
+        taskName: "",
+        taskTime: "",
+        taskLocation: ""
     };
+
 
     handleAddTaskSubmit = event => {
         event.preventDefault();
-      };
+        API.saveTask({
+            taskName: this.state.taskName,
+            taskTime: this.state.taskTime,
+            taskDate: Date.now,
+            taskLocation: this.state.taskLocation
+        })
+            .catch(err => console.log(err));
+
+        this.setState({
+            taskName: "",
+            taskTime: "",
+            taskDate: "",
+            taskLocation: ""
+        });
+    };
 
     handleGoHomeSubmit = event => {
         event.preventDefault();
-      };
+        API.saveTask({
+            taskName: this.state.taskName,
+            taskTime: this.state.taskTime,
+            taskDate: new Date(),
+            taskLocation: this.state.taskLocation
+        })
+            .catch(err => console.log(err));
+        this.props.history.push('/home')
+
+    };
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
+            [name]: value
         });
-      };
+    };
 
 
     render() {
+
         return (
             <div>
                 <form>
                     <p>Task</p>
                     <input
-                        value={this.state.task}
+                        value={this.state.taskName}
                         onChange={this.handleInputChange}
-                        name="task"
+                        name="taskName"
                     ></input>
                     <p>Date/Time (Optional)</p>
                     <input
-                        value={this.state.date}
+                        value={this.state.taskTime}
                         onChange={this.handleInputChange}
-                        name="date"
+                        name="taskTime"
                     ></input>
                     <p>Location</p>
                     <input
-                        value={this.state.location}
+                        value={this.state.taskLocation}
                         onChange={this.handleInputChange}
-                        name="location"
+                        name="taskLocation"
                     ></input>
                     <button
                         onClick={this.handleAddTaskSubmit}
@@ -56,11 +78,10 @@ export default class AddTask extends React.Component {
                         Add Task
                     </button>
                     <button
-                        onClick={this.handleGoHomeSubmit}
+                        onClick={this.handleGoHomeSubmit.bind(this)}
                     >
                         Submit and Go Home
                     </button>
-
                 </form>
             </div>
         )
