@@ -43,4 +43,24 @@
 
 p {
     font-size: 20px;
+    color: #f7f5e6;
 }
+
+.main {
+    background-color: #333A56;
+    
+    
+}
+
+.uk-column-1-2 {
+    background-color: #ececec;
+}
+
+a {
+    color: #333A56 !important;
+    text-shadow: none;
+}
+
+
+
+
