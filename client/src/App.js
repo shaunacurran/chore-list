@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 
-// css file temp commented out
+
 import styles from './uikit.css';
 import infotext from './landing.css';
 import navbar from './navbar.css';
@@ -48,9 +48,13 @@ class App extends Component {
       
       
           <div className="uk-position-medium uk-position-center-left uk-overlay uk-overlay-default">Create, organize, track, and complete errands fast and efficiently.
+            <div className="uk-container">
+              <button className="uk-button uk-button-default">CREATE ACCOUNT</button> <button className="uk-button uk-button-default">LOGIN</button>  
+            </div>
           </div>
-    
-       
+          
+          
+          
 
       </div>
        
