@@ -29,3 +29,36 @@
 .cyclist {
     width: 100%;
 }
+
+#icons {
+    height: 70px;
+    display: block;
+}
+
+.iconContainer {
+    margin-bottom: 150px;
+    margin-top: 100px;
+    width: 100%;
+    
+}
+
+p {
+    font-size: 20px;
+    color: #f7f5e6;
+}
+
+.main {
+    background-color: #333A56;
+    
+    
+}
+
+.uk-column-1-2 {
+    background-color: #ececec;
+}
+
+a {
+    color: #333A56 !important;
+    text-shadow: none;
+}
+
