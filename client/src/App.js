@@ -51,11 +51,7 @@ class App extends Component {
         </Router>
       
       
-          <div className="uk-position-medium uk-position-center-left uk-overlay uk-overlay-default">Create, organize, track, and complete errands fast and efficiently.
-            <div className="uk-container">
-              <button className="uk-button uk-button-default">CREATE ACCOUNT</button> <button className="uk-button uk-button-default">LOGIN</button>  
-            </div>
-          </div>
+       
           
           
           
