@@ -1,0 +1,26 @@
+.uk-position-medium.uk-position-center-left.uk-overlay.uk-overlay-default {
+    color: #ffffff;
+    background-color: transparent;
+    font-size: 35px;
+    padding: 30px;
+    height: 300px;
+    width: 300px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.uk-container {
+    width: 450px;
+    margin-left: -40px;
+}
+
+.uk-button.uk-button-default {
+    background-color: #f7f5e6;
+    color: #333A56;
+    opacity: .8;
+    
+}
+
+.uk-button.uk-button-default:hover {
+    background-color: #bebcae
+}
