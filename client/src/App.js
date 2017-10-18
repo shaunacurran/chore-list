@@ -15,6 +15,7 @@ import AddTask from './components/AddTask';
 import SignIn from './components/SignIn';
 import NavImage from './components/NavImage';
 import HouseholdSignUp from './components/HouseholdSignUp.js';
+import Home from './components/Home.js'
 
 
 class App extends Component {
@@ -41,7 +42,11 @@ class App extends Component {
                 </div>
               </nav>
             </div>
+
+            <Route exact path ="/home" component={ Home }/>
+
               <Route exact path ="/" component={ NavImage } />
+
               <Route exact path ="/signIn" component={ SignIn }/>
               <Route exact path ="/householdsignup" component={ HouseholdSignUp }/>
               <Route exact path ="/map" component={ GoogleApiWrapper }/>

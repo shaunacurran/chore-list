@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
-    createdBy: {type: String, required: true},
+    createdBy: {type: String},
     taskName:{type: String, requied: true},
-    taskStatus:{type: String, required: true},
-    taskType: {type: String, requied:true},
-    taskDate: {type: Date, required: true},
-    taskTime: {type: Time, required: true},
-    taskLocation: {type: String, required}
+    taskStatus:{type: String},
+    taskType: {type: String},
+    taskDate: {type: Date, default: Date.now},
+    taskTime: {type: String},
+    taskLocation: {type: String, required: true}
 });
 
 const Task = mongoose.model("Task", taskSchema);

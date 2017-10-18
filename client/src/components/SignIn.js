@@ -1,4 +1,5 @@
 import React from 'react'
+import API from "../utils/API";
 
 export default class SignIn extends React.Component {
 
@@ -13,14 +14,33 @@ export default class SignIn extends React.Component {
 
     handleSignInSubmit = event => {
         event.preventDefault();
-      };
+        var _this = this;
+        API.getUsers({})
+            .then(function (res) {
+                var userArray = res.data
+                // for (var i = 0; i < userArray.length; i++) {
+                // console.log(res.data[i].email)
+                // console.log(userArray[0].email)
+                userArray.filter(function (userObject) {
+
+                    return _this.state.email === userObject.email;
+                }).filter(function (userObject) {
+                    return _this.state.password === userObject.password
+                });
+
+                //     }
+                // }
+
+            })
+
+    };
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
+            [name]: value
         });
-      };
+    };
 
 
     render() {
