@@ -6,12 +6,21 @@
     height: 300px;
     width: 300px;
     font-weight: bold;
-    position: relative;
     text-shadow: 1px 1px 1px black;
 }
-/* 
-h2 {
-    color: #ffffff;
-    background-color: #3a3a3a;
-    opacity: .5;
-} */
+
+.uk-container {
+    width: 450px;
+    margin-left: -40px;
+}
+
+.uk-button.uk-button-default {
+    background-color: #f7f5e6;
+    color: #333A56;
+    opacity: .8;
+    
+}
+
+.uk-button.uk-button-default:hover {
+    background-color: #bebcae
+}
