@@ -8,12 +8,14 @@ import navbar from './navbar.css';
 
 import GoogleApiWrapper from './components/Map';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 import ToDo from './components/ToDo';
-import ViewStudents from './components/ViewStudents';
 import HomeTasks from './components/HomeTasks';
 import AddTask from './components/AddTask';
 import SignIn from './components/SignIn';
 import NavImage from './components/NavImage';
+import HouseholdSignUp from './components/HouseholdSignUp.js';
+
 
 class App extends Component {
   render() {
@@ -31,6 +33,7 @@ class App extends Component {
                 <div className="uk-navbar-right">
                   <ul className="uk-navbar-nav">
                     <li className="uk-active"><Link to = "/signin/">Sign In</Link></li>
+                    <li className="uk-active"><Link to = "/householdsignup/">Sign Up</Link></li>
                     <li className="uk-active"><Link to="/map/">Map</Link></li>
                     <li className="uk-active"><Link to = "/addtask/">Tasks</Link></li>
                     <li className="uk-active"><Link to = "/toDoList/">To-Do List</Link></li>
@@ -40,6 +43,7 @@ class App extends Component {
             </div>
               <Route exact path ="/" component={ NavImage } />
               <Route exact path ="/signIn" component={ SignIn }/>
+              <Route exact path ="/householdsignup" component={ HouseholdSignUp }/>
               <Route exact path ="/map" component={ GoogleApiWrapper }/>
               <Route exact path ="/addTask" component={ AddTask }/>
               <Route exact path ="/toDoList" component={ ToDo }/>

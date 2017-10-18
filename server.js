@@ -12,19 +12,16 @@ app.use(bodyParser.json());
 console.log("RUNNING TODO APP");
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
- console.log("THIS IS IN PRODUCTION line 14");
  app.use(express.static("client/build"));
 }
 
 app.use(routes);
-
 
 mongoose.Promise = global.Promise;
 
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
-  console.log("Serving client/build/index.html");
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
