@@ -1,8 +1,12 @@
 {
-  "main.css": "static/css/main.99caa14d.css",
-  "main.css.map": "static/css/main.99caa14d.css.map",
-  "main.js": "static/js/main.ea1b53fc.js",
-  "main.js.map": "static/js/main.ea1b53fc.js.map",
-  "static/media/biker.png": "static/media/biker.fbd8ff6c.png",
-  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "static/css/main.ca756797.css",
+  "main.css.map": "static/css/main.ca756797.css.map",
+  "main.js": "static/js/main.a83020f7.js",
+  "main.js.map": "static/js/main.a83020f7.js.map",
+  "static/media/biker.png": "static/media/biker.207f0488.png",
+  "static/media/check.png": "static/media/check.fe0b1328.png",
+  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg",
+  "static/media/map.png": "static/media/map.fcc93cce.png",
+  "static/media/pencil.png": "static/media/pencil.5c27ffea.png",
+  "static/media/textsmile.png": "static/media/textsmile.13412f0a.png"
 }
