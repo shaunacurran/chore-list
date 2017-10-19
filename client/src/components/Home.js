@@ -1,5 +1,6 @@
 import React from 'react';
 import API from "../utils/API";
+import taskscss from '../tasks.css';
 
 export default class Home extends React.Component {
 
@@ -43,6 +44,7 @@ export default class Home extends React.Component {
     render() {
         var taskEntries = this.state.allTasks;
         var listTasks = taskEntries.map(task => (
+
             <li>
                 {task.taskName}
                 <br />
@@ -56,17 +58,19 @@ export default class Home extends React.Component {
                     Done
                 </button>
             </li>
-
-        ));
+        )
+    );
         return (
-            <div>
-                <h4>
-                    Events
-                <ul>
-                        {listTasks}
-                    </ul>
-                </h4>
+            <div className = "tasksInput">
+                <div>
+                    <h4>
+                         Events
+                        <ul>
+                             {listTasks}
+                        </ul>
+                    </h4>
+                </div>
             </div>
         );
     }
-};
+}

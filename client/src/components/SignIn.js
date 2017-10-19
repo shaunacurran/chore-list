@@ -1,5 +1,6 @@
 import React from 'react'
 import API from "../utils/API";
+import signincss from '../signin.css';
 
 export default class SignIn extends React.Component {
 
@@ -53,7 +54,7 @@ export default class SignIn extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className = "signinForm">
                 <form>
                     <p>Email</p>
                     <input

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mapcss from '../map.css';
 
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 const style = {
@@ -9,7 +10,7 @@ class MapContainer extends Component {
 
 render() {
     return (
-    <div>
+    <div className = "mapContainer">
       
    <Map
    
