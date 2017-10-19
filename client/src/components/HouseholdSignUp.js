@@ -1,5 +1,6 @@
 import React from 'react';
 import API from "../utils/API";
+import signupcss from '../signup.css';
 
 export default class HouseholdSignUp extends React.Component {
 
@@ -30,7 +31,7 @@ export default class HouseholdSignUp extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className = "signUpForm">
                 <form>
                     <p>
                         Create a Household Name
