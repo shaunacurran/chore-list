@@ -12,15 +12,18 @@ class NavImage extends Component {
 render() {
     return (
     <div className="main">
+      
     <div className = "bikeContainer">
       <img className = "cyclist" src={image} alt="image of cyclist"/>
      </div> 
-
+    
+      
     <div className="uk-position-medium uk-position-center-left uk-overlay uk-overlay-default">Create, organize, track, and complete errands fast and efficiently.
       <div className="uk-container">
         <a className="uk-button uk-button-default" href="/householdsignup/">CREATE ACCOUNT</a> <a className="uk-button uk-button-default" href="/signin/">LOGIN</a>  
       </div>
     </div>
+    
 
     <div className="iconContainer">
       <center><div className = "uk-column-1-3">
