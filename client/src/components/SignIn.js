@@ -21,17 +21,25 @@ export default class SignIn extends React.Component {
                 // for (var i = 0; i < userArray.length; i++) {
                 // console.log(res.data[i].email)
                 // console.log(userArray[0].email)
-                userArray.filter(function (userObject) {
+                // userArray.filter(function (userObject) {
 
-                    return _this.state.email === userObject.email;
-                }).filter(function (userObject) {
-                    return _this.state.password === userObject.password
-                });
+                //     return _this.state.email === userObject.email;
+                // }).filter(function (userObject) {
+                //     return _this.state.password === userObject.password
+                // });
 
                 //     }
                 // }
+                
+                function findEmail(fruit) { 
+                    return userArray.email === _this.state.email;
+                }
+                
+                console.log(userArray.find(findEmail));
 
             })
+            .catch(err => console.log(err))
+            this.props.history.push('/home')
 
     };
 
@@ -47,17 +55,17 @@ export default class SignIn extends React.Component {
         return (
             <div>
                 <form>
+                    <p>Email</p>
                     <input
                         value={this.state.email}
                         onChange={this.handleInputChange}
                         name="email"
-                        placeholder="Email"
                     ></input>
+                    <p>Password</p>
                     <input
                         value={this.state.password}
                         onChange={this.handleInputChange}
                         name="password"
-                        placeholder="Password"
                     ></input>
                     <button
                         onClick={this.handleSignInSubmit}
