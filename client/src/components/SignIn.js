@@ -24,28 +24,24 @@ export default class SignIn extends React.Component {
         API.getUsers({})
             .then(function (res) {
                 var userArray = res.data
-                // for (var i = 0; i < userArray.length; i++) {
-                // console.log(res.data[i].email)
-                // console.log(userArray[0].email)
-                // userArray.filter(function (userObject) {
 
-                //     return _this.state.email === userObject.email;
-                // }).filter(function (userObject) {
-                //     return _this.state.password === userObject.password
-                // });
-
-                //     }
-                // }
-                
-                function findEmail(fruit) { 
-                    return userArray.email === _this.state.email;
+                function findEmail(userArray) {
+                    return (userArray.email === _this.state.email,
+                        userArray.password === _this.state.password
+                    );
                 }
-                
-                console.log(userArray.find(findEmail));
+                sessionStorage.setItem('Email', _this.state.email);
+                sessionStorage.setItem('Password', _this.state.password);
+                sessionStorage.setItem('Household', );
+
+                if (userArray.find(findEmail)) {
+                    _this.props.history.push('/home')
+                }
+
+
 
             })
             .catch(err => console.log(err))
-            this.props.history.push('/home')
 
     };
 
@@ -59,6 +55,7 @@ export default class SignIn extends React.Component {
 
     render() {
         return (
+
        
         <div className ="uk-container">
              <div className ="backgroundImage">
@@ -71,6 +68,12 @@ export default class SignIn extends React.Component {
                     
                     <input className = "uk-input"
                         placeholder = "Email"
+
+            <div className="signinForm">
+                <form>
+                    <p>Email</p>
+                    <input
+
                         value={this.state.email}
                         onChange={this.handleInputChange}
                         name="email"

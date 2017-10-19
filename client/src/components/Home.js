@@ -53,20 +53,20 @@ export default class Home extends React.Component {
                 {task.taskLocation}
                 <br />
                 <button
-                    onClick={ () => this.deleteTask(task._id)}
+                    onClick={() => this.deleteTask(task._id)}
                 >
                     Done
                 </button>
             </li>
         )
-    );
+        );
         return (
-            <div className = "tasksInput">
+            <div className="tasksInput">
                 <div>
                     <h4>
-                         Events
+                        Tasks
                         <ul>
-                             {listTasks}
+                            {listTasks}
                         </ul>
                     </h4>
                 </div>
