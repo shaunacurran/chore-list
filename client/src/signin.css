@@ -1,3 +1,34 @@
+.formWrapper {
+    position: relative;
+}
+
+.backgroundImage {
+    width: 100%;
+    margin-top: -20px;
+    position: absolute; 
+    
+}
+
 .signinForm {
+    z-index: 99;
+    position: absolute;
+    margin: auto;
+    display: block;
+    margin-left: 500px;
     margin-top: 200px;
+    
+}
+
+.desk {
+    width: 100%;
+    margin-top: 76px;
+    z-index: 0;
+}
+
+.mainForm {
+    background-color: #f7f5e6 !important;
+}
+
+.formContainer {
+    overflow: hidden;
 }
