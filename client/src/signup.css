@@ -1,3 +1,25 @@
+.formWrapper {
+    position: relative;
+}
+
+.backgroundImage {
+    width: 100%;
+    position: absolute; 
+}
+
 .signUpForm {
+    z-index: 99;
+    position: absolute;
+    margin: auto;
+    display: block;
+    margin-left: 500px;
     margin-top: 200px;
 }
+
+.desk {
+    width: 100%;
+    margin-top: 95px;
+    z-index: 0;
+}
+
+

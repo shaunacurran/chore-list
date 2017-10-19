@@ -1,6 +1,11 @@
 import React from 'react'
 import API from "../utils/API";
 import signincss from '../signin.css';
+import desk from '../images/desk.png'
+import navbar from '../navbar.css';
+import styles from '../uikit.css';
+
+import NavImage from '../components/NavImage';
 
 export default class SignIn extends React.Component {
 
@@ -54,28 +59,41 @@ export default class SignIn extends React.Component {
 
     render() {
         return (
+       
+        <div className ="uk-container">
+             <div className ="backgroundImage">
+                 <img className= "desk" src={desk} alt="image of desk"/>
+            </div>
+        <div className = "mainForm">
             <div className = "signinForm">
-                <form>
-                    <p>Email</p>
-                    <input
+
+                <form className = "uk-form-large">
+                    
+                    <input className = "uk-input"
+                        placeholder = "Email"
                         value={this.state.email}
                         onChange={this.handleInputChange}
                         name="email"
                     ></input>
-                    <p>Password</p>
-                    <input
+                    <br></br>
+                    <input className = "uk-input"
+                        placeholder = "Password"
                         value={this.state.password}
                         onChange={this.handleInputChange}
                         name="password"
                     ></input>
-                    <button
+                    <br></br>
+                    <button className = "uk-button uk-button-default"
                         onClick={this.handleSignInSubmit}
                     >
                         Sign In
                     </button>
 
                 </form>
+                </div>
             </div>
+        </div>
+        
         )
     }
 };
