@@ -15,8 +15,8 @@ import AddTask from './components/AddTask';
 import SignIn from './components/SignIn';
 import NavImage from './components/NavImage';
 import HouseholdSignUp from './components/HouseholdSignUp.js';
-import Home from './components/Home.js'
-
+import Home from './components/Home.js';
+import User from './components/User.js';
 
 class App extends Component {
   render() {
@@ -38,6 +38,7 @@ class App extends Component {
                     <li className="uk-active"><Link to="/map/">Map</Link></li>
                     <li className="uk-active"><Link to = "/addtask/">Tasks</Link></li>
                     <li className="uk-active"><Link to = "/toDoList/">To-Do List</Link></li>
+                    <li className="uk-active"><Link to = "/user/">Create User</Link></li>
                   </ul>
                 </div>
               </nav>
@@ -52,6 +53,7 @@ class App extends Component {
               <Route exact path ="/map" component={ GoogleApiWrapper }/>
               <Route exact path ="/addTask" component={ AddTask }/>
               <Route exact path ="/toDoList" component={ ToDo }/>
+              <Route exact path ="/user" component={ User }/>
         </nav>
         </Router>
       
