@@ -11,7 +11,7 @@ class NavImage extends Component {
 
 render() {
     return (
-    <div className="main">
+    <div>
       
     <div className = "bikeContainer">
       <img className = "cyclist" src={image} alt="image of cyclist"/>

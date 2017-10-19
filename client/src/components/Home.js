@@ -13,6 +13,7 @@ export default class Home extends React.Component {
             taskLocation: ""
         };
         this.loadTasks.bind(this);
+        this.deleteTask.bind(this)
     };
 
     componentDidMount() {
@@ -31,6 +32,13 @@ export default class Home extends React.Component {
             .catch(err => console.log(err));
     };
 
+    deleteTask = id => {
+        var tthis = this;
+        API.deleteTask(id)
+            .then(res => tthis.loadTasks())
+            .catch(err => console.log(err))
+    }
+
 
     render() {
         var taskEntries = this.state.allTasks;
@@ -42,6 +50,11 @@ export default class Home extends React.Component {
                 <br />
                 {task.taskLocation}
                 <br />
+                <button
+                    onClick={ () => this.deleteTask(task._id)}
+                >
+                    Done
+                </button>
             </li>
 
         ));

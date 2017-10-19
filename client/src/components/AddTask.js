@@ -80,7 +80,7 @@ export default class AddTask extends React.Component {
                     <button
                         onClick={this.handleGoHomeSubmit.bind(this)}
                     >
-                        Submit and Go Home
+                        Add and Go Home
                     </button>
                 </form>
             </div>
