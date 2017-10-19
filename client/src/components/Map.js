@@ -38,6 +38,6 @@ const wrapper = GoogleApiWrapper({
   apiKey: 'AIzaSyDnGMHkWUjvmtY8EAoTAAfrl5L8Q_yptxo'
 })(MapContainer);
 
-export default wrapper;
+export default MapContainer;
 
 

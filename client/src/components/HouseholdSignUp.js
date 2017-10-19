@@ -1,11 +1,12 @@
 import React from 'react';
+import NavImage from '../components/NavImage';
 import API from "../utils/API";
 import desk from '../images/desk.png'
 import signupcss from '../signup.css';
 import navbar from '../navbar.css';
 import styles from '../uikit.css';
 
-import NavImage from '../components/NavImage';
+
 
 export default class HouseholdSignUp extends React.Component {
 
@@ -37,7 +38,7 @@ export default class HouseholdSignUp extends React.Component {
     render() {
         return (
         <div className ="formWrapper">
-                <div className ="backgroundImage">
+                <div className ="backgroundImageAccount">
                      <img className= "desk" src={desk} alt="image of top of desk"/>
                 </div>
 <div className = "uk-grid">

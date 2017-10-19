@@ -1,5 +1,7 @@
 import React from 'react';
 import API from "../utils/API";
+import addTask from '../addtask.css';
+import postIt from '../images/postit.png';
 
 export default class AddTask extends React.Component {
 
@@ -52,38 +54,44 @@ export default class AddTask extends React.Component {
     render() {
 
         return (
-            <div>
-                <form>
+            <div className = "taskContainer">
+                <div className ="backgroundImage">
+                     <img className= "postIt" src={postIt} alt="image of top of post it and people working"/>
+                 </div>
+
+            <div className = "taskForm">
+                <form className = "uk-form-large">
                     <p>Task</p>
-                    <input
+                    <input className = "uk-input"
                         value={this.state.taskName}
                         onChange={this.handleInputChange}
                         name="taskName"
                     ></input>
                     <p>Date/Time (Optional)</p>
-                    <input
+                    <input className = "uk-input"
                         value={this.state.taskTime}
                         onChange={this.handleInputChange}
                         name="taskTime"
                     ></input>
                     <p>Location</p>
-                    <input
+                    <input className = "uk-input"
                         value={this.state.taskLocation}
                         onChange={this.handleInputChange}
                         name="taskLocation"
                     ></input>
-                    <button
+                    <button className = "uk-button uk-button-default"
                         onClick={this.handleAddTaskSubmit}
                     >
                         Add Task
                     </button>
-                    <button
+                    <button className = "uk-button uk-button-default"
                         onClick={this.handleGoHomeSubmit.bind(this)}
                     >
                         Add and Go Home
                     </button>
                 </form>
             </div>
+        </div>
         )
     }
 };

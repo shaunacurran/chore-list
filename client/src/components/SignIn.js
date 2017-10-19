@@ -60,7 +60,7 @@ export default class SignIn extends React.Component {
     render() {
         return (
        
-        <div className ="uk-container">
+        <div className ="signInContainer">
              <div className ="backgroundImage">
                  <img className= "desk" src={desk} alt="image of desk"/>
             </div>

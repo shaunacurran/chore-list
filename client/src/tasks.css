@@ -1,4 +1,31 @@
-.tasksInput {
+.tasks {
+    z-index: 99;
+    position: absolute;
+    margin: auto;
+    display: block;
+    margin-left: 100px;
     margin-top: 200px;
+    width: 30%;
+    background-color: #ffffff;
+    opacity: .8;
+    
+}
+
+.tasksContainerHome {
+    background-color: #f7f5e6 !important;
 
 }
+
+.backgroundImageHome {
+    margin-top: -10px
+}
+
+.postIt {
+    width: 100%;
+    margin-top: 80px;
+    position: absolute; 
+}
+ h4 {
+    color: #000000; 
+    font-family: 'Raleway', sans-serif; 
+ }
