@@ -2,9 +2,10 @@
     position: relative;
 }
 
-.backgroundImage {
+.backgroundImageAccount {
     width: 100%;
     position: absolute; 
+    margin-top: -20px;
 }
 
 .signUpForm {

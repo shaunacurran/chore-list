@@ -33,13 +33,11 @@ class App extends Component {
               <nav className="uk-navbar-container uk-navbar-transparent">
                 <div className="uk-navbar-right">
                   <ul className="uk-navbar-nav">
-                    <li className="uk-active"><Link to="/signin/">Sign In</Link></li>
-                    <li className="uk-active"><Link to="/householdsignup/">Sign Up</Link></li>
-                    <li className="uk-active"><Link to="/map/">Map</Link></li>
+                    <li className="uk-active"><Link to="/">Home</Link></li>
+                    {/* <li className="uk-active"><Link to="/map/">Map</Link></li>  */}
                     <li className="uk-active"><Link to="/addtask/">Add Tasks</Link></li>
                     <li className="uk-active"><Link to="/home/">View Tasks</Link></li>
-                    <li className="uk-active"><Link to="/toDoList/">To-Do List</Link></li>
-                    <li className="uk-active"><Link to="/user/">Create User</Link></li>
+                    
                   </ul>
                 </div>
               </nav>

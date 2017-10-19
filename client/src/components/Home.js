@@ -1,6 +1,8 @@
 import React from 'react';
 import API from "../utils/API";
 import taskscss from '../tasks.css';
+import postIt from '../images/postit.png';
+import map from './Map.js';
 
 export default class Home extends React.Component {
 
@@ -45,14 +47,14 @@ export default class Home extends React.Component {
         var taskEntries = this.state.allTasks;
         var listTasks = taskEntries.map(task => (
 
-            <li>
+            <li className = "uk-list uk-list-striped">
                 {task.taskName}
                 <br />
                 {task.taskTime}
                 <br />
                 {task.taskLocation}
                 <br />
-                <button
+                <button className = "uk-button uk-button-default"
                     onClick={() => this.deleteTask(task._id)}
                 >
                     Done
@@ -61,16 +63,30 @@ export default class Home extends React.Component {
         )
         );
         return (
-            <div className="tasksInput">
-                <div>
-                    <h4>
-                        Tasks
+        <div className = "tasksContainerHome">
+            <div className ="backgroundImageHome">
+                    <img className= "postIt" src={postIt} alt="image of top of post it and people working"/>
+            </div>
+            <div className = "uk-form-large">
+                <div className="tasks">
+                    <div>
+                      <h4>
+                            Tasks
                         <ul>
                             {listTasks}
                         </ul>
-                    </h4>
+                      </h4>
+                    </div>
                 </div>
             </div>
+
+
+    </div> 
+
+
+
+
+    
         );
     }
 }

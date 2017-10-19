@@ -46,7 +46,8 @@ render() {
 
 
     <div className = "uk-column-1-2">
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div>
+          <h3>Keep all your errands in one place. Add things to your daily to do list and check them off as you go about your day. Cut back on time running around, finishing up tasks nearby.</h3>
         </div>
         <div>
         <img className = "textSmile" src={textSmile} alt="image of girl smiling with phone"/>
